@@ -3,7 +3,7 @@ const AdminID = AppData.getString("AdminID");
 const bot = BotManager.getCurrentBot();
 
 
-let unreadMessageCount = 0;
+const unreadMessage = {};
 
 /**
  * (string) msg.content: 메시지의 내용
@@ -18,7 +18,9 @@ let unreadMessageCount = 0;
  * (void) msg.reply(string): 답장하기
  */
 function onMessage(msg) {
-  unreadMessageCount++;
+  if (!unreadMessage[msg.room]) unreadMessage[msg.room] = 0;
+  if (++unreadMessage[msg.room] >= 50) bot.markAsRead(msg.room);
+  
   
   if (msg.content.startsWith("e ")) {
     try {
