@@ -1,5 +1,7 @@
 
 // Get Code From Github master branch
-const CODE_jsoup = org.jsoup.Jsoup.connect("https://raw.githubusercontent.com/Heavyrisem/NotionKakao_Bot/master/main.js").get();
-result.outputSettings().prettyPrint(false);
+const jsoup = org.jsoup.Jsoup.connect("https://raw.githubusercontent.com/Heavyrisem/NotionKakao_Bot/master/main.js").get();
+jsoup.outputSettings().prettyPrint(false);
+const CODE_jsoup = jsoup.wholeText();
+Log.debug(CODE_jsoup);
 eval(CODE_jsoup);
