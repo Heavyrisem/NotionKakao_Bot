@@ -22,7 +22,7 @@ function onMessage(msg) {
   if (++unreadMessage[msg.room] >= 5) {
     bot.markAsRead(msg.room);
     unreadMessage[msg.room] = 0;
-    msg.reply(`DEBUG: ${unreadMessage[msg.room]}`)
+    msg.reply("DEBUG: " + unreadMessage[msg.room]);
   }
   
   
