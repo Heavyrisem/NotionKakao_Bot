@@ -19,7 +19,7 @@ const unreadMessage = {};
  */
 function onMessage(msg) {
   if (!unreadMessage[msg.room]) unreadMessage[msg.room] = 0;
-  if (++unreadMessage[msg.room] >= 5) {
+  if (++unreadMessage[msg.room] >= 50) {
     bot.markAsRead(msg.room);
     unreadMessage[msg.room] = 0;
     // msg.reply("DEBUG: " + unreadMessage[msg.room]);
