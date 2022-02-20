@@ -1,4 +1,4 @@
-const VERSION = 1.0;
+const VERSION = 1.01;
 const AdminID = AppData.getString("AdminID");
 const bot = BotManager.getCurrentBot();
 
@@ -24,8 +24,8 @@ function onMessage(msg) {
     unreadMessage[msg.room] = 0;
     // msg.reply("DEBUG: " + unreadMessage[msg.room]);
   }
-  
-  
+
+
   if (msg.content.startsWith("e ")) {
     try {
       msg.reply(eval(msg.content.replace("e ", "")));
@@ -55,7 +55,7 @@ bot.addListener(Event.MESSAGE, onMessage);
  * (string) msg.command: 명령어 이름
  * (Array) msg.args: 명령어 인자 배열
  */
-function onCommand(msg) {}
+function onCommand(msg) { }
 bot.setCommandPrefix("@");
 bot.addListener(Event.COMMAND, onCommand);
 
@@ -67,19 +67,19 @@ function onCreate(savedInstanceState, activity) {
   activity.setContentView(textView);
 }
 
-function onStart(activity) {}
+function onStart(activity) { }
 
-function onResume(activity) {}
+function onResume(activity) { }
 
-function onPause(activity) {}
+function onPause(activity) { }
 
-function onStop(activity) {}
+function onStop(activity) { }
 
-function onRestart(activity) {}
+function onRestart(activity) { }
 
-function onDestroy(activity) {}
+function onDestroy(activity) { }
 
-function onBackPressed(activity) {}
+function onBackPressed(activity) { }
 
 bot.addListener(Event.Activity.CREATE, onCreate);
 bot.addListener(Event.Activity.START, onStart);
