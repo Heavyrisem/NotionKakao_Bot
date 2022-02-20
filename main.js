@@ -34,9 +34,13 @@ function onMessage(msg) {
     }
   }
 
-  if (msg.content.startsWith("재시작")) {
+  if (msg.content === "재시작") {
     msg.reply("재시작을 시도합니다.");
     bot.compile();
+  }
+
+  if (msg.content === "버전") {
+    msg.reply(VERSION.toString());
   }
 }
 bot.addListener(Event.MESSAGE, onMessage);
