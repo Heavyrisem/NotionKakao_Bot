@@ -1,4 +1,4 @@
-const VERSION = 1.01;
+const VERSION = 1.02;
 const AdminID = AppData.getString("AdminID");
 const bot = BotManager.getCurrentBot();
 
